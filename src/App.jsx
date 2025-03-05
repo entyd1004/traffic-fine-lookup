@@ -24,6 +24,15 @@ function App() {
     { value: "xemaydien", title: "XE MÁY ĐIỆN", icon: <ElectricMotorbikeIcon /> },
   ]
 
+  const filterInput = (value) => {
+    return value.replace(/[^A-Za-z0-9]/g, '');
+  };
+
+  const handleLicensePlateChange = (e) => {
+    const filteredValue = filterInput(e.target.value);
+    setLicensePlate(filteredValue);
+  };
+
   const handlevehicleTypeChange = ({ value }) => {
     setVehicleType(value);
   };
@@ -63,13 +72,12 @@ function App() {
 
       const data = await response.json();
       if (data.status === 200 && data.data.length > 0) {
-        console.log(data.data);
         setViolations(data.data);
         toaster.create({
           description: "Tìm thấy " + findViolateUnpunished(data.data) + " vi phạm chưa xử phạt!",
-          type: "error",
+          type: "warning",
         });
-      } else {
+      } else if (data.status === 200 && data.data.length === 0) {
         toaster.create({
           description: "Chúc mừng! Phương tiện của bạn chưa vi phạm!",
           type: "success",
@@ -155,14 +163,14 @@ function App() {
       <Box padding={4}>
         <Card.Root size="sm" background={colorMode === 'dark' ? 'gray.900' : '#e7f3ff'}>
           <Flex justify="center" p={2} align="center">
-            <MdOutlineVerified color={colorMode === 'dark' ? 'white' : '#007BFF'}/>
+            <MdOutlineVerified color={colorMode === 'dark' ? 'white' : '#007BFF'} />
             <Heading color={colorMode === 'dark' ? 'white' : '#007BFF'} marginStart={2} size="sm" textAlign="center">Dữ liệu được lấy từ Cục CSGT</Heading>
           </Flex>
         </Card.Root>
 
         <Flex marginTop={4} direction="column">
           <Field label="Biển số xe:">
-            <Input size="md" fontSize="sm" colorPalette="blue" placeholder="Ví dụ: 20A99999" value={licensePlate} onChange={(e) => setLicensePlate(e.target.value)} />
+            <Input size="md" fontSize="sm" colorPalette="blue" placeholder="Ví dụ: 20A99999" value={licensePlate} onChange={handleLicensePlateChange} />
           </Field>
         </Flex>
 
