@@ -1,4 +1,3 @@
-// App.js
 import { Box, Button, Card, CardBody, Center, Flex, Heading, HStack, Icon, Image, Input, Link, SimpleGrid, Skeleton, Spinner, Text } from '@chakra-ui/react';
 import { useColorMode } from './components/ui/color-mode';
 import { LuSun as SunIcon, LuMoon as MoonIcon } from "react-icons/lu";
@@ -163,7 +162,7 @@ function App() {
 
         <Flex marginTop={4} direction="column">
           <Field label="Biển số xe:">
-            <Input size="xl" fontSize="sm" colorPalette="blue" placeholder="Ví dụ: 20A99999" value={licensePlate} onChange={(e) => setLicensePlate(e.target.value)} />
+            <Input size="sm" fontSize="sm" colorPalette="blue" placeholder="Ví dụ: 20A99999" value={licensePlate} onChange={(e) => setLicensePlate(e.target.value)} />
           </Field>
         </Flex>
 
@@ -201,7 +200,7 @@ function App() {
           size="lg"
           width="full"
           onClick={handleSubmit}
-          disabled={loading} // Disable button khi đang loading
+          disabled={loading}
         >
           {loading ? (
             <>
