@@ -1,5 +1,5 @@
 // App.js
-import { Box, Button, Card, CardBody, Center, Flex, Heading, HStack, Icon, Image, Input, Link, Skeleton, Spinner, Text } from '@chakra-ui/react';
+import { Box, Button, Card, CardBody, Center, Flex, Heading, HStack, Icon, Image, Input, Link, SimpleGrid, Skeleton, Spinner, Text } from '@chakra-ui/react';
 import { useColorMode } from './components/ui/color-mode';
 import { LuSun as SunIcon, LuMoon as MoonIcon } from "react-icons/lu";
 import { MdOutlineVerified } from "react-icons/md";
@@ -120,14 +120,37 @@ function App() {
 
   return (
     <>
-      <Flex background={colorMode === 'dark' ? 'black' : 'white'} justify="space-between" p={3} top={0} zIndex="sticky" boxShadow="md" marginBottom={4}>
+      <Flex
+        background={colorMode === 'dark' ? 'black' : 'white'}
+        align="center"
+        justify="space-between"
+        p={3}
+        top={0}
+        zIndex="sticky"
+        boxShadow="md"
+        marginBottom={4}
+        position="sticky"
+      >
         <Link href="/traffic-fine-lookup" isExternal>
-          <Image src="./icon-512x512.png" alt="Chakra UI" boxSize="8" />
+          <Image src="./icon-512x512.png" alt="Chakra UI" boxSize="10" />
         </Link>
-        <Center>
-          <Heading fontFamily="Inter, sans-serif" as="h1" size="lg" textAlign="center">TRA CỨU PHẠT NGUỘI</Heading>
-        </Center>
-        <Button onClick={() => toggleColorMode()} variant="ghost">{colorMode === 'dark' ? <MoonIcon /> : <SunIcon />}</Button>
+
+        <Flex flex="1" justify="center">
+          <Heading
+            fontFamily="Inter, sans-serif"
+            as="h1"
+            size="lg"
+          >
+            TRA CỨU PHẠT NGUỘI
+          </Heading>
+        </Flex>
+
+        <Button w={10} h={10}
+          onClick={() => toggleColorMode()}
+          variant="ghost"
+        >
+          {colorMode === 'dark' ? <MoonIcon /> : <SunIcon />}
+        </Button>
       </Flex>
 
       <Box padding={4}>
