@@ -121,7 +121,7 @@ function App() {
   return (
     <>
       <Flex background={colorMode === 'dark' ? 'black' : 'white'} justify="space-between" p={3} top={0} zIndex="sticky" boxShadow="md" marginBottom={4}>
-        <Link href="/" isExternal>
+        <Link href="/traffic-fine-lookup" isExternal>
           <Image src="./icon-512x512.png" alt="Chakra UI" boxSize="8" />
         </Link>
         <Center>
