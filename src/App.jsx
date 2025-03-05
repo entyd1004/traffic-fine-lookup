@@ -156,14 +156,14 @@ function App() {
       <Box padding={4}>
         <Card.Root size="sm" background={colorMode === 'dark' ? 'gray.900' : '#e7f3ff'}>
           <Flex justify="center" p={2} align="center">
-            <MdOutlineVerified color={colorMode === 'dark' ? 'white' : '#007BFF'} />
-            <Heading color={colorMode === 'dark' ? 'white' : '#007BFF'} marginStart={2} size="md" textAlign="center">Dữ liệu được lấy từ Cục CSGT</Heading>
+            <MdOutlineVerified color={colorMode === 'dark' ? 'white' : '#007BFF'}/>
+            <Heading color={colorMode === 'dark' ? 'white' : '#007BFF'} marginStart={2} size="sm" textAlign="center">Dữ liệu được lấy từ Cục CSGT</Heading>
           </Flex>
         </Card.Root>
 
         <Flex marginTop={4} direction="column">
           <Field label="Biển số xe:">
-            <Input size="xl" colorPalette="blue" placeholder="Ví dụ: 20A99999" value={licensePlate} onChange={(e) => setLicensePlate(e.target.value)} />
+            <Input size="xl" fontSize="sm" colorPalette="blue" placeholder="Ví dụ: 20A99999" value={licensePlate} onChange={(e) => setLicensePlate(e.target.value)} />
           </Field>
         </Flex>
 
@@ -189,6 +189,7 @@ function App() {
                 indicator={false}
                 key={item.value}
                 value={item.value}
+                fontSize="sm"
               />
             ))}
           </HStack>
