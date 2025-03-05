@@ -162,7 +162,7 @@ function App() {
 
         <Flex marginTop={4} direction="column">
           <Field label="Biển số xe:">
-            <Input size="sm" fontSize="sm" colorPalette="blue" placeholder="Ví dụ: 20A99999" value={licensePlate} onChange={(e) => setLicensePlate(e.target.value)} />
+            <Input size="md" fontSize="sm" colorPalette="blue" placeholder="Ví dụ: 20A99999" value={licensePlate} onChange={(e) => setLicensePlate(e.target.value)} />
           </Field>
         </Flex>
 
