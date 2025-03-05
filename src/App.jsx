@@ -125,7 +125,7 @@ function App() {
           <Image src="./icon-512x512.png" alt="Chakra UI" boxSize="8" />
         </Link>
         <Center>
-          <Heading fontFamily="Inter, sans-serif" as="h1" size="lg" textAlign="center">TRA CỨU PHẠT NGUỌI</Heading>
+          <Heading fontFamily="Inter, sans-serif" as="h1" size="lg" textAlign="center">TRA CỨU PHẠT NGUỘI</Heading>
         </Center>
         <Button onClick={() => toggleColorMode()} variant="ghost">{colorMode === 'dark' ? <MoonIcon /> : <SunIcon />}</Button>
       </Flex>
